@@ -83,7 +83,11 @@ const dom = {
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const mobile = window.innerWidth < 760;
-const quality = reducedMotion ? 0.42 : (mobile ? 0.58 : 1);
+const quality =
+reducedMotion ? 0.35 :
+mobile ? 0.55 :
+window.innerWidth > 1600 ? 1.2 :
+1;
 
 let currentScene = 1;
 let started = false;
@@ -108,7 +112,7 @@ scene.background = new THREE.Color(0x050006);
 scene.fog = new THREE.FogExp2(0x080009, 0.018);
 
 const camera = new THREE.PerspectiveCamera(
-  mobile ? 64 : 56,
+  mobile ? 52 : 56,
   window.innerWidth / window.innerHeight,
   0.1,
   160
