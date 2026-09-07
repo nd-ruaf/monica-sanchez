@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#070008">
+  <title>Para M&oacute;nica S&aacute;nchez</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body data-scene="1">
+  <div id="app" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">UN PEQUE&Ntilde;O UNIVERSO PARA M&Oacute;NICA</div>
+    <div class="top-actions">
+      <button id="audioToggle" class="icon-btn" type="button" aria-label="Activar o silenciar la musica" title="Musica">&#9835;</button>
+    </div>
+  </header>
+
+  <div id="progress" class="progress" aria-label="Progreso de la historia"></div>
+
+  <main id="story" class="story" aria-live="polite">
+    <section id="storyCard" class="story-card">
+      <div id="sceneLabel" class="scene-label"></div>
+      <h1 id="sceneTitle">Para <span>M&oacute;nica S&aacute;nchez</span></h1>
+      <p id="sceneLead" class="lead"></p>
+      <p id="sceneBody" class="body-copy"></p>
+      <div id="signature" class="signature" hidden></div>
+    </section>
+
+    <section id="book" class="book" aria-hidden="true">
+      <div class="book-shadow"></div>
+      <div class="page page-left">
+        <div class="page-inner">
+          <span class="book-kicker">Una p&aacute;gina para ti</span>
+          <h2>M&oacute;nica</h2>
+          <p>Este no es un libro de promesas.</p>
+          <p>Es apenas una p&aacute;gina sincera: me agrada conocerte, me gusta la forma en que apareces en mis d&iacute;as y quise hacerte algo que no pudieras encontrar en una tienda.</p>
+        </div>
+      </div>
+      <div class="page page-right">
+        <div class="page-inner">
+          <p class="book-quote">Lo bonito de un detalle no est&aacute; en cu&aacute;nto cuesta, sino en la persona en la que uno estaba pensando mientras lo hac&iacute;a.</p>
+          <div class="drawn-heart">&#9825;</div>
+          <p class="book-small">Y esta vez, esa persona eras t&uacute;.</p>
+        </div>
+      </div>
+      <div class="page-turn" aria-hidden="true"></div>
+    </section>
+
+    <div id="observer" class="observer" aria-hidden="true">
+      <div class="observer-hair"></div>
+      <div class="observer-head"></div>
+      <div class="observer-body"></div>
+    </div>
+  </main>
+
+  <nav class="navigation" aria-label="Navegacion de escenas">
+    <button id="prevBtn" class="nav-btn ghost" type="button">&#8592; Anterior</button>
+    <button id="nextBtn" class="nav-btn primary" type="button">Espicha mi coraz&oacute;n &#9825;</button>
+  </nav>
+
+  <div class="interaction-hint">
+Un pequeño universo creado para regalarte una sonrisa ✨
+</div>
+
+  <audio id="musica" loop preload="auto">
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
